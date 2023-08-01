@@ -2,26 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+  font-family: mediumCustom;
+  src: url(../../public/iranyekan/allwoff/IRANSansX-Medium.woff),
+    url(../../public/iranyekan/allwoff/IRANSansX-Medium.woff2);
+}
+@font-face {
+  font-family: boldCustom;
+  src: url(../../public/iranyekan/allwoff/IRANSansX-Bold.woff),
+    url(../../public/iranyekan/allwoff/IRANSansX-Bold.woff2);
+}
+@font-face {
+  font-family: numberCustom;
+  src: url(../../public/iranyekan/allwoff/IRANSansWeb-FaNum.woff),
+    url(../../public/iranyekan/allwoff/IRANSansWeb-FaNum.woff2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+:root {
+  --Bgcolor: #F2F2F2;
+  --NavBgcolor: #f6f6f6;
+  --PrimaryGreen: #438e44;
+  --SecondaryGreen: #79b59c;
+  --Red: #d01110;
+  --Secondary: #ececec;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--Bgcolor);
+  font-family: mediumCustom;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+.MainNavbar {
+  background-color: var(--NavBgcolor);
+  @apply p-4 z-20 w-full bg-transparent  text-[#363636];
+}
+
+.LinkHoverEffect {
+  @apply hover:text-Red transition-all;
+}
+
+.DropdownContentLinks {
+  @apply hover:bg-red-400 hover:text-white   transition-all duration-200 py-1 pb-2 px-2  rounded-full;
+}
+
+.Mn-active {
+  @apply bg-[#F79C9C] text-red-700;
+}
+
+.Mn-active-icon {
+  @apply rotate-90 text-white border-dashed;
+}
+
+.Mn-active-list {
+  @apply h-[200px] visible;
+}
+
+.NavLinkActive {
+  @apply text-Red
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgb(0, 0, 0) !important;
+}
+
+.SliderNext,
+.SliderPrev {
+  @apply bg-gray-500 p-2 px-4 rounded-md text-sm;
+}
+
+.numberFont {
+  font-family: numberCustom;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(118, 118, 118);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--Red);
+  border-radius: 2rem;
+}
+
+@media (max-width: 640px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
 }
