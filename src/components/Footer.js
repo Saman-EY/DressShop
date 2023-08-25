@@ -7,7 +7,6 @@ import Telegram from '@/icons/Telegram';
 const Footer = () => {
   return (
     <section className=" ">
-      
       <section className="bg-[#ECEFF1] items-center grid justify-center grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-4">
         <div className="border border-gray-400 rounded-md bg-white text-center text-sm h-full flex flex-col gap-4 p-2 w-full  max-w-lg justify-self-center ">
           <h3 className="text-Red text-lg font-bold ">فروشگاه اینترنتی</h3>
@@ -101,7 +100,7 @@ const Footer = () => {
         </div>
       </section>
       <div className="text-center bg-gray-300 text-gray-600 py-2">
-        Designe By SAMAN
+        Designe By <span className="font-bold">SAMAN</span>
       </div>
     </section>
   );

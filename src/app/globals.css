@@ -8,6 +8,11 @@
     url(../../public/iranyekan/allwoff/IRANSansX-Medium.woff2);
 }
 @font-face {
+  font-family: lightCustom;
+  src: url(../../public/iranyekan/allwoff/IRANSansX-Regular.woff),
+    url(../../public/iranyekan/allwoff/IRANSansX-Regular.woff2);
+}
+@font-face {
   font-family: boldCustom;
   src: url(../../public/iranyekan/allwoff/IRANSansX-Bold.woff),
     url(../../public/iranyekan/allwoff/IRANSansX-Bold.woff2);
@@ -19,7 +24,7 @@
 }
 
 :root {
-  --Bgcolor: #F2F2F2;
+  --Bgcolor: #f2f2f2;
   --NavBgcolor: #f6f6f6;
   --PrimaryGreen: #438e44;
   --SecondaryGreen: #79b59c;
@@ -32,6 +37,89 @@ body {
   font-family: mediumCustom;
   overflow-x: hidden;
   user-select: none;
+}
+
+.lightFont {
+  font-family: lightCustom;
+}
+
+.boldFont {
+  font-family: boldCustom;
+}
+
+.SliderRange {
+  width: 100%;
+  height: 5px;
+  border-radius: 100px;
+  background-color: var(--Secondary);
+  margin-top: 1.5rem;
+}
+
+.SliderRange .example-thumb {
+  width: 4px;
+  cursor: pointer;
+  outline: none;
+  height: 20px;
+  /* border-radius: 50%; */
+  top: -7px;
+  background-color: var(--Red);
+}
+
+.SliderRange .example-track {
+  /* top: 20px; */
+  height: 5px;
+  border-radius: 100px;
+}
+
+.SliderRange .example-track-0 {
+  background-color: var(--Secondary);
+}
+
+.SliderRange .example-track-1 {
+  background-color: var(--Red);
+}
+
+.numberFont {
+  font-family: numberCustom;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: rgb(0, 0, 0) !important;
+}
+
+.TabBtn {
+  position: relative;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.TabBtn::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  border-radius: 4px;
+  background-color: var(--Red);
+  bottom: -2px;
+  left: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
+}
+
+.TabBtn:hover::before {
+  transform-origin: right;
+  transform: scaleX(1);
+}
+
+.TabActive.TabBtn::before {
+  transform: scaleX(1);
+}
+
+
+.gallerySlider .swiper-slide-thumb-active {
+  opacity: .5;
 }
 
 .MainNavbar {
@@ -60,21 +148,12 @@ body {
 }
 
 .NavLinkActive {
-  @apply text-Red
-}
-
-.swiper-button-next,
-.swiper-button-prev {
-  color: rgb(0, 0, 0) !important;
+  @apply text-Red;
 }
 
 .SliderNext,
 .SliderPrev {
   @apply bg-gray-500 p-2 px-4 rounded-md text-sm;
-}
-
-.numberFont {
-  font-family: numberCustom;
 }
 
 /* width */
@@ -84,12 +163,21 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
+  background: #545454;
   background: rgb(118, 118, 118);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: var(--Red);
+  border-radius: 2rem;
+}
+
+.SidebarUl::-webkit-scrollbar {
+  width: 4px;
+}
+
+.SidebarUl::-webkit-scrollbar-thumb {
   border-radius: 2rem;
 }
 

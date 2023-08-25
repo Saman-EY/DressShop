@@ -19,14 +19,13 @@ const MainNavbar = ({ MobileNav, setMobileNav }) => {
 
   return (
     <>
-      {console.log(pathname)}
       <div
         className={`  p-4 z-20 w-full   text-[#363636] ${
           pathname === '/' ? 'absolute bg-transparent' : 'bg-[#f6f6f6]'
         } `}
       >
-        <section className="flex flex-row-reverse md:flex-row justify-center items-center lg:container mx-auto">
-          <div className="flex gap-4 justify-end md:justify-start flex-1">
+        <section className="flex flex-row-reverse lg:flex-row justify-center items-center lg:container mx-auto">
+          <div className="flex gap-4 justify-end lg:justify-start flex-1">
             <button className="relative  group">
               <LocalMallOutlinedIcon />
               <span className="bg-Red text-white flex items-center justify-center w-5 h-5 rounded-full text-xs absolute -top-2 -left-2 numberFont">
@@ -34,27 +33,30 @@ const MainNavbar = ({ MobileNav, setMobileNav }) => {
               </span>
               <CartIconDropdown />
             </button>
-            <Link className="LinkHoverEffect hidden md:block" href="/">
+            <Link className="LinkHoverEffect hidden lg:block" href="/">
               ورود / ثبت نام
             </Link>
           </div>
-          <Image
-            src={Logo}
-            width={1500}
-            height={1500}
-            className="w-fit h-14 flex-1"
-            alt="logo"
-          />
+          <Link href={'/'}>
+            <Image
+              src={Logo}
+              width={1500}
+              height={1500}
+              priority
+              className="w-fit h-14 flex-1"
+              alt="logo"
+            />
+          </Link>
 
           <section className="flex-1">
-            <section className="flex items-center justify-end md:bg-Secondary p-2 rounded-md w-fit md:mr-auto ml-auto ">
+            <section className="flex items-center justify-end lg:bg-Secondary p-2 rounded-md w-fit lg:mr-auto ml-auto ">
               <span>
-                <button className="hidden md:block">
+                <button className="hidden lg:block">
                   <SearchIcon />
                 </button>
                 <button
                   onClick={() => setMobileNav((prev) => !prev)}
-                  className="block md:hidden"
+                  className="block lg:hidden"
                 >
                   <BarsIcon />
                 </button>
@@ -62,7 +64,7 @@ const MainNavbar = ({ MobileNav, setMobileNav }) => {
               <input
                 type="text"
                 placeholder="هرچیزی که دوست دارید جستجو کنید"
-                className="rounded-md p-1 pr-4 outline-none text-sm placeholder:text-xs text-gray-500 w-64 bg-transparent hidden md:block"
+                className="rounded-md p-1 pr-4 outline-none text-sm placeholder:text-xs text-gray-500 w-64 bg-transparent hidden lg:block"
               />
             </section>
           </section>

@@ -20,7 +20,7 @@ const LandingIconSection = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-5 ">
           <span className="border-2 border-black flex items-center justify-center w-fit rounded-xl p-5">
-            <Return />
+            <Return width={"44px"} height={"44px"} />
           </span>
           <div className="flex flex-col justify-center items-center">
             <h3 className="text-lg font-bold">ضمانت بازگشت</h3>
@@ -51,7 +51,7 @@ const LandingIconSection = () => {
         </div>
         <div className="flex flex-col justify-center items-center gap-5 ">
           <span className="border-2 border-black flex items-center justify-center w-fit rounded-xl p-5">
-            <Exchange />
+            <Exchange width={"44px"} height={"44px"} />
           </span>
           <div className="flex flex-col justify-center items-center">
             <h3 className="text-lg font-bold">تعویض سایز</h3>

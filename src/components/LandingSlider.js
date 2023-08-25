@@ -11,18 +11,18 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
 
-const LandingSlider = ({ right, color, img }) => {
+const LandingSlider = ({ right, color, img, hideBanner }) => {
   const sliderRef = useRef();
 
   return (
     <>
-      <section className="mb-10 p-1 md:p-1 md:grid grid-cols-12  items-center gap-5 lg:gap-8">
+      <section className="mb-10 p-1 md:p-1 md:grid grid-cols-12  items-center gap-5 lg:gap-8 ">
         <div
-          className={`col-span-2 hidden md:flex gap-6  flex-col justify-between items-center ${
+          className={`col-span-2 hidden bg-red-300 md:flex gap-6  flex-col justify-between items-center ${hideBanner && "md:hidden"} ${
             !right && 'order-1'
           } `}
         >
-          <Image src={img} width={500} height={800} alt="image" />
+          {!hideBanner && <Image className='' src={img} width={500} height={800} alt="image" />} 
           <Link
             className={`rounded-lg text-xs lg:text-sm ${
               color === 'red'
@@ -36,7 +36,7 @@ const LandingSlider = ({ right, color, img }) => {
             مشاهده موارد بیشتر
           </Link>
         </div>
-        <div className="col-span-12 md:col-span-10 ">
+        <div className={`col-span-12 md:col-span-10  ${hideBanner && "md:col-span-12"} `}>
           <h3 className="border-b-2 border-PrimaryGreen block md:hidden w-fit mx-auto mt-3 mb-5 pb-2 ">
             جدید ترین محصولات
           </h3>
@@ -95,7 +95,7 @@ const LandingSlider = ({ right, color, img }) => {
           </Swiper>
 
           <Link
-            className={`rounded-lg mx-auto flex w-fit  text-white text-sm p-2 px-5 md:hidden ${
+            className={`rounded-lg mx-auto flex w-fit  text-white text-sm p-2 px-5 md:hidden  ${hideBanner && "hidden"} ${
               color === 'red'
                 ? 'bg-Red'
                 : color === 'green'

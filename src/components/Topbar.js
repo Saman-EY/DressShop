@@ -51,6 +51,7 @@ const Topbar = ({ MobileNav, setMobileNav }) => {
             src={Logo}
             width={500}
             height={500}
+            priority
             className="w-fit h-11 flex-1 mx-auto md:mx-0"
             alt="logo"
           />
